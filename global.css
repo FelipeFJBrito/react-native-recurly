@@ -9,9 +9,13 @@
     --color-card: #fff8e7;
     --color-muted: #f6eecf;
     --color-muted-foreground: rgba(0, 0, 0, 0.6);
+    --color-muted-foreground-white: rgba(255, 255, 255, 0.89);
     --color-primary: #081126;
+    --color-text-white: #ffffff;
+    --color-secondary: #f8f7f5;
     --color-accent: #ea7a53;
     --color-border: rgba(0, 0, 0, 0.1);
+    --color-border-white: rgba(255, 255, 255, 0.69);
     --color-success: #16a34a;
     --color-destructive: #dc2626;
     --color-subscription: #8fd1bd;
@@ -81,7 +85,7 @@
     }
 
     .home-user-name {
-        @apply ml-4 text-2xl font-sans-bold text-primary;
+        @apply ml-4 text-2xl font-sans-bold text-text-white;
     }
 
     .home-add-icon {
@@ -113,19 +117,19 @@
     }
 
     .list-title {
-        @apply text-2xl font-sans-bold text-primary;
+        @apply text-2xl font-sans-bold text-white;
     }
 
     .list-action {
-        @apply rounded-full border border-black/20 px-4 py-1;
+        @apply rounded-full border border-white/200 px-4 py-1;
     }
 
     .list-action-text {
-        @apply text-lg font-sans-semibold text-primary;
+        @apply text-lg font-sans-semibold text-white;
     }
 
     .upcoming-card {
-        @apply mr-4 w-44 rounded-2xl border border-black/10 bg-background p-4;
+        @apply mr-4 w-44 rounded-2xl border border-white/100 bg-background p-4;
     }
 
     .upcoming-row {
@@ -137,15 +141,15 @@
     }
 
     .upcoming-price {
-        @apply text-lg font-sans-bold text-primary;
+        @apply text-lg font-sans-bold text-white;
     }
 
     .upcoming-meta {
-        @apply text-sm font-sans-semibold text-muted-foreground;
+        @apply text-sm font-sans-semibold text-muted-foreground-white;
     }
 
     .upcoming-name {
-        @apply mt-2 text-lg font-sans-bold text-primary;
+        @apply mt-2 text-lg font-sans-bold text-white;
     }
 
     .sub-card {
@@ -165,7 +169,7 @@
     }
 
     .sub-icon {
-        @apply size-16 rounded-lg;
+        @apply size-12 rounded-lg;
     }
 
     .sub-copy {
@@ -229,7 +233,7 @@
     }
 
     .home-empty-state {
-        @apply py-4 text-sm font-sans-medium text-black/60;
+        @apply py-4 text-sm font-sans-medium text-white/60;
     }
 
     .auth-safe-area {
@@ -265,15 +269,15 @@
     }
 
     .auth-wordmark {
-        @apply text-3xl font-sans-extrabold text-primary;
+        @apply text-3xl font-sans-extrabold text-white;
     }
 
     .auth-wordmark-sub {
-        @apply -mt-1 text-xs font-sans-semibold uppercase tracking-[1px] text-muted-foreground;
+        @apply -mb-12 text-xs font-sans-semibold uppercase tracking-[1px] text-accent;
     }
 
     .auth-title {
-        @apply text-3xl font-sans-bold text-primary;
+        @apply mt-12 text-3xl font-sans-bold text-white;
     }
 
     .auth-subtitle {
@@ -297,7 +301,7 @@
     }
 
     .auth-input {
-        @apply rounded-2xl border border-border bg-background px-4 py-4 text-base font-sans-medium text-primary;
+        @apply rounded-2xl border border-border bg-muted px-4 py-4 text-base font-sans-medium text-primary;
     }
 
     .auth-input-error {
@@ -310,6 +314,14 @@
 
     .auth-helper {
         @apply text-sm font-sans-medium text-muted-foreground;
+    }
+
+    .auth-alert {
+        @apply mb-4 rounded-2xl border border-destructive/20 bg-destructive/10 px-4 py-3;
+    }
+
+    .auth-alert-text {
+        @apply text-sm font-sans-semibold text-destructive;
     }
 
     .auth-button {
@@ -349,11 +361,75 @@
     }
 
     .auth-link-copy {
-        @apply text-sm font-sans-medium text-muted-foreground;
+        @apply text-sm font-sans-medium text-white;
     }
 
     .auth-link {
         @apply text-sm font-sans-bold text-accent;
+    }
+
+    .auth-trust-copy {
+        @apply mt-6 text-center text-sm font-sans-medium text-white/65;
+    }
+
+    .auth-code-input {
+        @apply text-center text-2xl font-sans-bold tracking-[6px];
+    }
+
+    .auth-check-list {
+        @apply gap-2 rounded-2xl bg-background/70 p-4;
+    }
+
+    .auth-check-row {
+        @apply flex-row items-center gap-2;
+    }
+
+    .auth-check-dot {
+        @apply size-2.5 rounded-full bg-muted-foreground/30;
+    }
+
+    .auth-check-dot-valid {
+        @apply bg-success;
+    }
+
+    .auth-check-text {
+        @apply text-sm font-sans-medium text-muted-foreground;
+    }
+
+    .auth-check-text-valid {
+        @apply text-primary;
+    }
+
+    .settings-title {
+        @apply mb-3 text-3xl font-sans-bold text-white;
+    }
+
+    .settings-copy {
+        @apply mb-6 text-base font-sans-medium text-muted-foreground-white;
+    }
+
+    .settings-card {
+        @apply rounded-2xl border border-white/100 bg-card p-5;
+    }
+
+    .settings-card-title {
+        @apply text-xl font-sans-bold text-primary;
+    }
+
+    .settings-card-copy {
+        @apply mt-2 text-sm font-sans-medium text-muted-foreground;
+    }
+
+    .settings-sign-out {
+        @apply mt-5 items-center rounded-2xl bg-primary py-4;
+    }
+
+    .settings-sign-out-disabled {
+        @apply bg-primary/40;
+    }
+
+    .settings-sign-out-text {
+        @apply text-base font-sans-bold text-white;
     }
 
     .modal-overlay {
